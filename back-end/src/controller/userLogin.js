@@ -4,12 +4,11 @@ const jwtActions = require('../helpers/jwtActions');
 const userLogin = async (req, res) => {
  const { email, password } = req.body;
 
- const canLogin = await checkIfUserCanLogin(email, password);
- console.log(canLogin);
- if (!canLogin) return res.status(404).json({ message: "email ou senha incorretos" });
+ const user = await checkIfUserCanLogin(email, password);
+ if (!user) return res.status(404).json({ message: "email ou senha incorretos" });
 
- const token = jwtActions.generateToken(canLogin);
- return res.status(200).json(token);
+ const token = jwtActions.generateToken(user);
+ return res.status(200).json({ token, id: user._id });
 }
 
 module.exports = userLogin;
