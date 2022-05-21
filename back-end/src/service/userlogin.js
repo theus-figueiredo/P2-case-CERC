@@ -7,7 +7,8 @@ const checkIfUserCanLogin = async (email, password) => {
   console.log(user);
   
   if (user) {
-    if (user.password = md5(password)) return user
+    console.log(`as senhas batem é: ${md5(password) === user.password}`);
+    if (user.password === md5(password)) return user
   };
 
   return false;
