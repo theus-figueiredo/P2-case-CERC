@@ -3,13 +3,16 @@ import Context from "./Context";
 
 export default function Provider({ children }) {
   const [token, setToken] = useState('');
-  const [userId, setUserId] = useState('');
+  const [userInfo, setUserInfo] = useState({});
+  const [showError, setShowError] = useState(false);
 
   const context = {
     token,
     setToken,
-    userId,
-    setUserId,
+    userInfo,
+    setUserInfo,
+    showError,
+    setShowError,
   };
 
   return (

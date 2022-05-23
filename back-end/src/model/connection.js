@@ -12,7 +12,7 @@ const UserRegisters = mongoose.model('cadastros', new mongoose.Schema({
   email: String,
   name: String,
   password: String,
-  cnpj: String,
+  phone: Number,
 }));
 
 module.exports = UserRegisters;

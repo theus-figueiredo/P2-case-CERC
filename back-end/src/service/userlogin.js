@@ -4,7 +4,6 @@ const md5 = require('md5');
 
 const checkIfUserCanLogin = async (email, password) => {
   const user = await UserRegisters.findOne({ email }).exec();
-  console.log(user);
   
   if (user) {
     if (user.password === md5(password)) return user
