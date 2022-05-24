@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Context from '../context/Context';
 import axios from 'axios';
 import ErrorMsg from '../components/ErrorMsg';
+import './pages.css';
 
 export default function LoginPage() {
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' });
@@ -41,47 +42,51 @@ export default function LoginPage() {
   };
 
   return (
-    <div className='p-5 text-center bg-light' style={ { margin: 13 + '%' } }>
-      <h2 className='h2 mb-2 fw-normal'>Portal Publica</h2>
-      <div className='sign-in'>
-        <form>
-          <div className='form-floating'>
-          <h1 className='h3 mb-3 fw-normal'>Login</h1>
-            {errorMessage.length > 0 && <ErrorMsg message={ errorMessage } />}
-            <input
-              placeholder='Email'
-              id='email'
-              type="email"
-              onChange={ handleInputChange }
-            />
-          </div>
-          <div>
-            <input
-              placeholder='Senha'
-              id='password'
-              type='password'
-              onChange={ handleInputChange }
-            />
-          </div>
-          <br />
-          <button 
-            type='button'
-            className='btn btn-sm btn-primary'
-            onClick={ handleLoginClick }
-          >
-            Entrar
-          </button>
-          <br />
-          <br />
-          <button
+      <div className='wrapper fadeInDown'>
+        <div id="formContent">
+        <h2>Portal Publica</h2>
+        <div className='sign-in'>
+          <form>
+            <div className='form-floating'>
+            <h1 className='h3 mb-3 fw-normal'>Login</h1>
+              {errorMessage.length > 0 && <ErrorMsg message={ errorMessage } />}
+              <input
+                className='fadeIn second'
+                placeholder='Email'
+                id='email'
+                type="email"
+                onChange={ handleInputChange }
+              />
+            </div>
+            <div>
+              <input
+                className='fadeIn third'
+                placeholder='Senha'
+                id='password'
+                type='password'
+                onChange={ handleInputChange }
+              />
+            </div>
+            <br />
+            <button 
               type='button'
-              className='btn btn-sm btn-secondary'
-              onClick={ handleRegisterClick }
+              className='btn btn-primary'
+              onClick={ handleLoginClick }
             >
-              Criar uma conta
+              Entrar
             </button>
-        </form>
+            <div id="formFooter">
+            <a
+                href='#'
+                className='underlineHover'
+                onClick={ handleRegisterClick }
+              >
+                Criar uma conta
+              </a>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+      </div>
   );
 };

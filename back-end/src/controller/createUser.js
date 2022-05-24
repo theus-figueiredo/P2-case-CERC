@@ -2,10 +2,12 @@ const { checkIfUserInfoIsTaken, createUser } = require('../service');
 const _ = require('lodash');
 
 const validateUserCreation = async (req, res, next) => {
-  const { email } = req.body;
+  const { email, password } = req.body;
 
   const doesUserExist = await checkIfUserInfoIsTaken(email);
   if(doesUserExist) return res.status(409).json(doesUserExist.message);
+
+  if (password.length < 5) return res.status(400).json({ message: "A senha deve ter pelo menos 5 carácteres" });
 
   next();
 };

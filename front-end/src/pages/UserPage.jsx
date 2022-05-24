@@ -61,7 +61,7 @@ export default function UserPage() {
         newInfo: {position: id, newValue: newUserInfo[id] }
       }
 
-      const { data } = await axios.patch(`http://localhost:3001/users/${userInfo._id}`, dataToUpdate, config);
+      await axios.patch(`http://localhost:3001/users/${userInfo._id}`, dataToUpdate, config);
 
       setUserInfo({ ...userInfo, [id]: newUserInfo[id] });
       setEditavel({...editavel, [id]: !editavel[id]});
