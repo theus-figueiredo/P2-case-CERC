@@ -8,15 +8,18 @@ Frontend feito com React
 Backend feito com NodeJs e Express
 Estilização feita usando bootstrap 5
 
- - usando algumas coisas como base para um projeto mais complexo -
-
 ⚡ Como abrir e rodar o projeto:
 
 1- Baixar o projeto na sua máquina.
+
 2- executar o comando "npm install" ou "npm i" tanto na pasta raiz do backend quando no frontend
+
 3- Na pasta raiz do projeto navegar até o diretório backend
+
 4- executar o comando "npm start"
+
 5- Navegar até o diretório frontend
+
 6- Executar o comando "npm start"
 
 :wrench: Funcionamento do app:
