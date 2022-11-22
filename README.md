@@ -3,10 +3,10 @@ Projeto fullstack de um simples portal de cadastro de usuários.
 
 :computer: Técnologias utilizadas:
 
-Projeto desenvolvido em JavaScript
-Frontend feito com React
-Backend feito com NodeJs e Express
-Estilização feita usando bootstrap 5
+Projeto desenvolvido em JavaScript<br>
+Frontend feito com React<br>
+Backend feito com NodeJs e Express<br>
+Estilização feita usando bootstrap 5<br>
 
 ⚡ Como abrir e rodar o projeto:
 
